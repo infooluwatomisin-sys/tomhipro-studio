@@ -1,0 +1,664 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tomisin | Website and Brand Designer</title>
+<meta name="description" content="Tomisin of Tomhi Pro designs websites, landing pages, logos and brand identities for coaches, consultants and service brands.">
+<meta property="og:title" content="Tomisin | Website and Brand Designer">
+<meta property="og:description" content="Websites, logos and brand identities that connect brands with people.">
+<meta property="og:image" content="images/tomisin-portrait.webp">
+<link rel="icon" href="images/tomisin-portrait.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#fdf3ec;
+  --cream-2:#f8e7dc;
+  --teal:#0e4b47;
+  --teal-2:#15605a;
+  --teal-3:#2e8c84;
+  --peach:#f6a587;
+  --peach-2:#fbd2c2;
+  --yellow:#f8cd7b;
+  --ink:#0f2f2c;
+  --muted:#5a6d6a;
+  --line:rgba(14,75,71,.14);
+  --serif:"DM Serif Display",Georgia,serif;
+  --script:"Caveat","Segoe Script",cursive;
+  --body:"DM Sans","Helvetica Neue",Arial,sans-serif;
+  --wrap:1200px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{background:var(--cream);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit}
+.wrap{width:min(var(--wrap),100% - 32px);margin-inline:auto}
+.serif{font-family:var(--serif);font-weight:400;letter-spacing:-.01em;line-height:1.02}
+.script{font-family:var(--script);font-weight:500}
+.sparkle{display:inline-block;width:.6em;height:.6em;color:var(--yellow);vertical-align:.1em}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:12px;padding:14px 24px;border-radius:999px;font-weight:600;font-size:15px;border:0;cursor:pointer;transition:transform .2s,background .2s,box-shadow .2s;white-space:nowrap}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(14,75,71,.18)}
+.btn svg{width:16px;height:16px;flex:none}
+.btn-teal{background:var(--teal);color:var(--cream)}
+.btn-peach{background:var(--peach);color:var(--ink)}
+.btn-cream{background:var(--cream);color:var(--teal)}
+.arrow-btn{display:grid;place-items:center;flex:none;width:40px;height:40px;border-radius:50%;background:var(--peach);color:var(--ink);transition:transform .2s}
+.arrow-btn svg{width:16px;height:16px}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:50;background:rgba(253,243,236,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .2s}
+.nav.scrolled{border-color:var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;height:76px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:14px;line-height:1.15;color:var(--teal)}
+.brand svg{width:38px;height:38px;flex:none}
+.nav-links{display:flex;gap:4px;list-style:none}
+.nav-links a{display:block;padding:8px 14px;border-radius:999px;font-size:14px;font-weight:500;color:var(--muted);transition:background .2s,color .2s}
+.nav-links a:hover,.nav-links a.active{background:var(--cream-2);color:var(--teal)}
+.nav .btn{padding:11px 20px;font-size:14px}
+.menu-btn{display:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:none;color:var(--teal);cursor:pointer}
+.menu-btn svg{width:20px;height:20px;margin:auto}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:40px 0 90px}
+.hero-blob{position:absolute;top:-80px;right:-90px;width:300px;height:300px;border-radius:50%;background:var(--teal);opacity:.95}
+.hero-dot{position:absolute;top:40px;right:40px;width:14px;height:14px;border-radius:50%;background:var(--peach)}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.hero-copy .hello{font-family:var(--serif);font-size:clamp(28px,3.4vw,44px);color:var(--teal-2)}
+.hero-copy h1{font-size:clamp(64px,10vw,140px);color:var(--teal);margin:2px 0 6px;position:relative;display:inline-block}
+.hero-copy h1 .sparkle{position:absolute;top:-4px;right:-46px;width:34px;height:34px}
+.hero-copy .role{font-size:clamp(30px,3.6vw,46px);color:var(--peach);line-height:1.1;margin-bottom:22px}
+.hero-copy p{max-width:440px;font-size:18px;color:var(--muted);margin-bottom:32px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px}
+.hero-ring{position:absolute;left:-4px;bottom:-60px;width:34px;height:34px;border:5px solid var(--teal-3);border-radius:50%}
+
+.hero-art{position:relative;justify-self:center;width:min(100%,460px);padding:30px 0 40px 30px}
+.arch-bg{position:absolute;top:0;right:0;width:84%;height:92%;background:var(--yellow);border-radius:999px 999px 36px 36px}
+.portrait{position:relative;aspect-ratio:4/5;border-radius:999px 999px 36px 36px;overflow:hidden;background:#c9cdd2;width:88%;box-shadow:0 30px 60px rgba(14,75,71,.2)}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 12%}
+.burst{position:absolute;top:-6px;left:0;width:70px;height:70px;color:var(--teal-3)}
+.badge-ring{position:absolute;top:10px;right:-14px;width:118px;height:118px;border-radius:50%;background:var(--cream);border:2px solid var(--teal);display:grid;place-items:center;box-shadow:0 10px 30px rgba(14,75,71,.15)}
+.badge-ring svg.text{position:absolute;inset:6px;width:calc(100% - 12px);height:calc(100% - 12px);animation:spin 18s linear infinite}
+.badge-ring .face{width:36px;height:36px;border-radius:50%;background:var(--teal);color:var(--yellow);display:grid;place-items:center}
+.badge-ring .face svg{width:22px;height:22px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.note{position:absolute;left:0;bottom:0;max-width:240px;padding:20px 26px 18px;border-radius:24px 24px 24px 6px;background:var(--teal);color:var(--cream);font-family:var(--script);font-size:28px;line-height:1.05;transform:rotate(-3deg);box-shadow:0 20px 40px rgba(14,75,71,.25)}
+.note svg{display:inline-block;width:20px;height:20px;vertical-align:middle;color:var(--peach)}
+.note i{display:block;width:70%;height:2px;margin-top:10px;background:var(--peach);border-radius:2px;opacity:.7}
+
+/* marquee */
+.marquee{background:var(--teal);color:var(--cream);overflow:hidden;padding:16px 0;transform:rotate(-1deg);margin:0 -10px}
+.marquee-track{display:flex;width:max-content;animation:scroll 34s linear infinite}
+.marquee span{font-family:var(--serif);font-size:clamp(20px,2.4vw,28px);display:flex;align-items:center;gap:28px;padding-right:28px;white-space:nowrap}
+.marquee span::after{content:"";width:16px;height:16px;background:var(--yellow);clip-path:polygon(50% 0,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0 50%,39% 39%)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* section titles */
+.section{padding:100px 0}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:36px}
+.section-title{font-size:clamp(36px,4.6vw,56px);color:var(--teal)}
+.section-title .sparkle{width:.5em;height:.5em;color:var(--peach)}
+.section-lead{max-width:520px;color:var(--muted);font-size:17px}
+
+/* works */
+.works-panel{background:var(--teal);color:var(--cream);border-radius:40px;padding:44px;position:relative}
+.works-panel .section-title{color:var(--cream)}
+.works-panel .section-title .sparkle{color:var(--yellow)}
+.works-panel .section-lead{color:rgba(253,243,236,.72)}
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.chip{padding:9px 18px;border-radius:999px;border:1.5px solid rgba(253,243,236,.4);background:none;color:var(--cream);font-size:14px;font-weight:500;cursor:pointer;transition:background .2s,border-color .2s,color .2s;white-space:nowrap}
+.chip:hover{border-color:var(--cream)}
+.chip.active{background:var(--peach);border-color:var(--peach);color:var(--ink)}
+.chip small{opacity:.6;margin-left:4px}
+.work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:30px}
+.work{display:flex;flex-direction:column;background:var(--cream);color:var(--ink);border-radius:22px;overflow:hidden;text-align:left;border:0;padding:0;cursor:pointer;transition:transform .25s,box-shadow .25s}
+.work:hover{transform:translateY(-6px);box-shadow:0 24px 48px rgba(0,0,0,.25)}
+.work:hover .arrow-btn{transform:rotate(45deg)}
+.work-media{aspect-ratio:4/3;overflow:hidden;background:var(--cream-2);margin:10px 10px 0;border-radius:14px}
+.work-media img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.work:hover .work-media img{transform:scale(1.05)}
+.work-text{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 18px 18px}
+.work-text h3{font-family:var(--body);font-size:18px;font-weight:700;line-height:1.2}
+.work-text span{font-size:14px;color:var(--muted)}
+.works-foot{display:flex;justify-content:center;margin-top:30px}
+.works-foot[hidden]{display:none}
+.works-note{text-align:center;margin-top:22px;font-size:14px;color:rgba(253,243,236,.7)}
+.works-note a{color:var(--yellow);font-weight:600}
+
+/* lightbox */
+.lightbox{position:fixed;inset:0;z-index:100;display:none;background:rgba(9,34,32,.92);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);overflow-y:auto;padding:70px 16px 40px}
+.lightbox.open{display:block}
+.lightbox-inner{max-width:880px;margin:0 auto;background:var(--cream);border-radius:28px;padding:22px}
+.lightbox-head{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:16px}
+.lightbox-head h3{font-family:var(--serif);font-size:clamp(26px,3vw,34px);font-weight:400;color:var(--teal);line-height:1.1}
+.lightbox-head span{display:inline-block;margin-top:4px;padding:5px 12px;border-radius:999px;background:var(--peach-2);font-size:13px;font-weight:600}
+.lightbox-img{width:100%;border-radius:18px;background:var(--cream-2)}
+.lightbox-desc{margin:18px 4px 0;font-size:17px;color:var(--muted)}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:16px}
+.fact{background:var(--teal);color:var(--cream);border-radius:16px;padding:14px 16px}
+.fact b{display:block;font-family:var(--serif);font-weight:400;font-size:20px;line-height:1.15}
+.fact span{font-size:12px;color:rgba(253,243,236,.7)}
+.lightbox-close{position:fixed;top:16px;right:16px;width:46px;height:46px;border-radius:50%;border:0;background:var(--cream);color:var(--teal);font-size:26px;line-height:1;cursor:pointer}
+
+/* about + services */
+.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:center}
+.about-art{position:relative;max-width:420px;justify-self:center;width:100%}
+.about-blob{position:absolute;inset:6% 0 0 4%;background:var(--teal-3);border-radius:46% 54% 40% 60% / 52% 44% 56% 48%;opacity:.9}
+.about-photo{position:relative;aspect-ratio:4/5;width:86%;margin-left:7%;border-radius:200px 200px 30px 30px;overflow:hidden;border:6px solid var(--cream);box-shadow:0 24px 50px rgba(14,75,71,.2)}
+.about-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 8%}
+.smiley{position:absolute;left:-6px;bottom:30px;width:74px;height:74px;border-radius:50%;background:var(--peach);color:var(--ink);display:grid;place-items:center;box-shadow:0 10px 24px rgba(14,75,71,.2)}
+.smiley svg{width:40px;height:40px}
+.crown{position:absolute;top:-8px;left:6px;width:52px;height:52px;color:var(--yellow);transform:rotate(-14deg)}
+.about-lead{font-family:var(--serif);font-size:clamp(24px,2.6vw,32px);line-height:1.25;color:var(--teal);margin-bottom:18px}
+.about-lead em{font-style:normal;color:var(--peach)}
+.about-copy > p{color:var(--muted);margin-bottom:14px}
+.checks{list-style:none;display:grid;gap:10px;margin:20px 0 0}
+.checks li{display:flex;gap:12px;align-items:flex-start}
+.checks li::before{content:"";flex:none;width:22px;height:22px;margin-top:1px;border-radius:50%;background:var(--teal) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f8cd7b' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center/13px no-repeat}
+
+.services{margin-top:80px}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.service{display:flex;gap:16px;align-items:flex-start;padding:24px;background:#fff;border:1px solid var(--line);border-radius:24px;transition:transform .25s,box-shadow .25s}
+.service:hover{transform:translateY(-4px);box-shadow:0 18px 36px rgba(14,75,71,.1)}
+.service-icon{flex:none;width:54px;height:54px;border-radius:16px;background:var(--teal);color:var(--cream);display:grid;place-items:center}
+.service-icon svg{width:26px;height:26px}
+.service h3{font-size:18px;font-weight:700;line-height:1.25}
+.service .price{display:inline-block;margin:4px 0 8px;font-size:13px;font-weight:600;color:var(--teal-2);background:var(--cream-2);padding:3px 10px;border-radius:999px}
+.service p{font-size:15px;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.tags span{padding:4px 11px;border-radius:999px;border:1px solid var(--line);font-size:12px;font-weight:500;color:var(--muted)}
+
+/* proof band */
+.proof{background:var(--yellow);border-radius:40px;padding:44px 48px;display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
+.proof::after{content:"";position:absolute;right:-40px;bottom:-60px;width:160px;height:160px;border-radius:50%;background:var(--teal-3);opacity:.85}
+.proof blockquote{font-size:clamp(18px,1.8vw,22px);line-height:1.45;font-weight:500}
+.proof cite{display:flex;align-items:center;gap:12px;margin-top:18px;font-style:normal;font-size:14px}
+.proof cite img{width:46px;height:46px;border-radius:50%;object-fit:cover;object-position:50% 10%;border:2px solid var(--teal)}
+.proof cite b{display:block;color:var(--teal);text-decoration:underline;text-underline-offset:3px}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);position:relative;z-index:1}
+.stat{padding:0 20px;border-left:1px solid rgba(14,75,71,.25)}
+.stat:first-child{border-left:0;padding-left:0}
+.stat b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(36px,4vw,50px);line-height:1;color:var(--teal)}
+.stat span{font-size:14px;line-height:1.3;display:block;margin-top:6px}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.step{position:relative;padding:28px 24px;border-radius:24px;background:#fff;border:1px solid var(--line)}
+.step:nth-child(2){background:var(--peach-2);border-color:transparent}
+.step:nth-child(4){background:var(--teal);color:var(--cream);border-color:transparent}
+.step:nth-child(4) p{color:rgba(253,243,236,.75)}
+.step .num{font-family:var(--script);font-size:34px;color:var(--peach);line-height:1}
+.step:nth-child(2) .num{color:var(--teal-2)}
+.step h3{font-family:var(--serif);font-weight:400;font-size:28px;margin:6px 0 8px}
+.step p{font-size:15px;color:var(--muted)}
+
+/* faq */
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}
+.faq-list details{border-bottom:1px solid var(--line)}
+.faq-list summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;align-items:center;padding:20px 0;font-size:17px;font-weight:600}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary::after{content:"+";flex:none;width:34px;height:34px;border-radius:50%;background:var(--cream-2);display:grid;place-items:center;font-weight:400;font-size:22px;color:var(--teal);transition:transform .25s,background .25s}
+.faq-list details[open] summary::after{transform:rotate(45deg);background:var(--peach)}
+.faq-list details p{color:var(--muted);padding:0 50px 20px 0}
+
+/* footer */
+.footer{background:var(--teal);color:var(--cream);padding:70px 0 30px;position:relative;overflow:hidden;margin-top:40px}
+.footer::before{content:"";position:absolute;right:-60px;bottom:-70px;width:220px;height:220px;border-radius:50%;background:var(--peach);opacity:.9}
+.footer-grid{position:relative;display:grid;grid-template-columns:1.5fr 1fr;gap:40px}
+.footer-grid > div + div{border-left:1px solid rgba(253,243,236,.18);padding-left:40px}
+.footer h2{font-size:clamp(34px,3.6vw,48px)}
+.footer h2 .script{display:inline-block;color:var(--yellow);font-size:1.2em;transform:rotate(-4deg)}
+.footer-cta{margin-top:24px;display:flex;flex-wrap:wrap;gap:12px}
+.footer h3{font-size:17px;font-weight:600;margin-bottom:16px}
+.contact-list{list-style:none;display:grid;gap:12px;font-size:15px;color:rgba(253,243,236,.85)}
+.contact-list li{display:flex;gap:12px;align-items:center;min-width:0}
+.contact-list svg{width:18px;height:18px;flex:none;color:var(--yellow)}
+.contact-list a:hover{color:var(--yellow)}
+.contact-list span{overflow-wrap:anywhere}
+.copyright{position:relative;margin-top:56px;padding-top:22px;border-top:1px solid rgba(253,243,236,.18);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:13px;color:rgba(253,243,236,.65)}
+.copyright a:hover{color:var(--yellow)}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* tablet */
+@media (max-width:1024px){
+  .nav-links{display:none;position:absolute;top:72px;left:16px;right:16px;flex-direction:column;padding:10px;background:var(--cream);border:1px solid var(--line);border-radius:24px;box-shadow:0 20px 40px rgba(14,75,71,.15)}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:12px 16px;font-size:16px}
+  .menu-btn{display:grid}
+  .work-grid,.service-grid{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .proof{grid-template-columns:1fr}
+  .footer::before{width:130px;height:130px;top:-65px;right:-65px;bottom:auto}
+}
+@media (max-width:860px){
+  .hero{padding-top:20px}
+  .hero-grid{grid-template-columns:1fr;gap:30px;text-align:center}
+  .hero-copy p{margin-inline:auto}
+  .hero-ctas{justify-content:center}
+  .hero-copy h1 .sparkle{right:-34px;width:26px;height:26px}
+  .hero-ring{display:none}
+  .hero-blob{width:200px;height:200px;top:-70px;right:-70px}
+  .about-grid,.faq-grid{grid-template-columns:1fr;gap:40px}
+  .about-art{max-width:340px}
+  .works-panel{padding:32px 22px;border-radius:30px}
+  .filters{flex-wrap:nowrap;overflow-x:auto;margin:0 -22px;padding:2px 22px 6px;scrollbar-width:none}
+  .filters::-webkit-scrollbar{display:none}
+  .facts{grid-template-columns:repeat(2,1fr)}
+}
+/* mobile */
+@media (max-width:600px){
+  .section{padding:70px 0}
+  .nav .btn{display:none}
+  .hero-art{width:min(100%,340px);padding:24px 0 36px 20px}
+  .badge-ring{width:96px;height:96px;right:-6px}
+  .note{font-size:23px;max-width:200px;padding:16px 20px 14px}
+  .work-grid,.service-grid,.steps{grid-template-columns:1fr}
+  .proof{padding:32px 24px;border-radius:30px}
+  .stat{padding:0 10px}
+  .stat span{font-size:12px}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-grid > div + div{border-left:0;padding-left:0;border-top:1px solid rgba(253,243,236,.18);padding-top:30px}
+  .lightbox-inner{padding:14px;border-radius:22px}
+  .faq-list details p{padding-right:0}
+  .hero-ctas .btn{flex:1 1 auto;justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){
+  .marquee-track,.badge-ring svg.text{animation:none}
+  .reveal{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav" aria-label="Main">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand" aria-label="Tomhi Pro home">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="12" fill="#0e4b47"/><path d="M10 12h20v5h-7.5v13h-5V17H10z" fill="#fdf3ec"/><circle cx="29" cy="28" r="3.2" fill="#f6a587"/></svg>
+      <span>Tomhi Pro<br>Creative Studio</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-blob" aria-hidden="true"></div>
+  <div class="hero-dot" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="hello">Hello, I'm</p>
+      <h1 class="serif">Tomisin<svg class="sparkle" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg></h1>
+      <p class="role script">Website &amp; Brand Designer</p>
+      <p>I craft clean, premium and purposeful websites, logos and brand identities that connect coaches, consultants and service brands with the people they serve.</p>
+      <div class="hero-ctas">
+        <a href="#work" class="btn btn-teal">View work
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg>
+        </a>
+        <a href="#about" class="btn btn-peach">About me
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg>
+        </a>
+      </div>
+      <span class="hero-ring" aria-hidden="true"></span>
+    </div>
+
+    <div class="hero-art">
+      <div class="arch-bg" aria-hidden="true"></div>
+      <svg class="burst" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M32 4v14M32 46v14M4 32h14M46 32h14M12 12l10 10M42 42l10 10M52 12L42 22M22 42L12 52"/></svg>
+      <div class="portrait"><img src="images/tomisin-portrait.webp" alt="Tomisin, website and brand designer, in a green blazer" fetchpriority="high"></div>
+      <div class="badge-ring" aria-label="Available for projects">
+        <svg class="text" viewBox="0 0 100 100" aria-hidden="true">
+          <defs><path id="ring" d="M50 50m-38 0a38 38 0 1 1 76 0a38 38 0 1 1-76 0"/></defs>
+          <text font-family="DM Sans, Arial" font-size="11" font-weight="700" letter-spacing="3.2" fill="#0e4b47"><textPath href="#ring">AVAILABLE FOR PROJECTS &#8226; AVAILABLE &#8226;</textPath></text>
+        </svg>
+        <span class="face"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M8 14.5c1 1.4 2.4 2 4 2s3-.6 4-2"/><path d="M9 9.5h.01M15 9.5h.01" stroke-width="3"/></svg></span>
+      </div>
+      <p class="note">Turning ideas into brands people trust <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><i></i></p>
+    </div>
+  </div>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Website design</span><span>Landing pages</span><span>Logo design</span><span>Brand identity</span><span>Responsive builds</span><span>Copy that converts</span><span>Netlify</span><span>Vercel</span>
+    <span>Website design</span><span>Landing pages</span><span>Logo design</span><span>Brand identity</span><span>Responsive builds</span><span>Copy that converts</span><span>Netlify</span><span>Vercel</span>
+  </div>
+</div>
+
+<section class="section" id="work">
+  <div class="wrap">
+    <div class="works-panel">
+      <div class="section-head">
+        <div>
+          <h2 class="serif section-title">Selected works <svg class="sparkle" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg></h2>
+          <p class="section-lead">Live websites, website concepts, logos and full brand identities. Tap any piece to see it up close.</p>
+        </div>
+      </div>
+      <div class="filters" id="filters" role="tablist" aria-label="Filter work"></div>
+      <div class="work-grid" id="workGrid"></div>
+      <div class="works-foot" id="worksFoot"><button class="btn btn-cream" id="moreBtn" type="button">Show more work</button></div>    </div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lbTitle">
+  <button class="lightbox-close" id="lbClose" aria-label="Close">&times;</button>
+  <div class="lightbox-inner">
+    <div class="lightbox-head">
+      <div><h3 id="lbTitle"></h3><span id="lbTag"></span></div>
+      <a class="btn btn-teal" id="lbLink" href="#" target="_blank" rel="noopener">Visit live site
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg>
+      </a>
+    </div>
+    <img class="lightbox-img" id="lbImg" src="" alt="">
+    <p class="lightbox-desc" id="lbDesc"></p>
+    <div class="facts" id="lbFacts"></div>
+  </div>
+</div>
+
+<section class="section" id="about" style="padding-top:20px">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-art reveal">
+        <div class="about-blob" aria-hidden="true"></div>
+        <svg class="crown" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" aria-hidden="true"><path d="M6 36l4-22 10 10 4-14 4 14 10-10 4 22z"/></svg>
+        <div class="about-photo"><img src="images/tomisin-portrait.webp" alt="Tomisin smiling softly" loading="lazy"></div>
+        <span class="smiley" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><circle cx="20" cy="20" r="15"/><path d="M13 23c2 3 4.2 4 7 4s5-1 7-4"/><path d="M15 16h.01M25 16h.01" stroke-width="4"/></svg></span>
+      </div>
+      <div class="about-copy">
+        <h2 class="serif section-title reveal" style="margin-bottom:18px">About me <svg class="sparkle" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg></h2>
+        <p class="about-lead reveal">Design that helps your business feel <em>as credible online</em> as it is in real life.</p>
+        <p class="reveal">I am Tomisin, the designer behind Tomhi Pro. I work as an Instagram carousel, logo and website designer, helping coaches, stylists, bakers and groomers turn their work into a brand people trust from the very first scroll.</p>
+        <p class="reveal">Every project starts with your voice and your client, then moves into a logo, brand or site that is clean, warm and built to hold up on every screen it is opened on.</p>
+        <ul class="checks reveal">
+          <li>Custom designed, never a copy paste template</li>
+          <li>Built and tested across desktop, tablet and mobile</li>
+          <li>Designed to guide visitors toward booking or ordering</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="services" id="services">
+      <div class="section-head">
+        <h2 class="serif section-title reveal">What I do <svg class="sparkle" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg></h2>
+        <p class="section-lead reveal">From a single landing page to a complete brand, everything is shaped around your business and the people you serve.</p>
+      </div>
+      <div class="service-grid">
+        <article class="service reveal">
+          <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 13h6M7 16h4"/></svg></span>
+          <div><h3>Landing pages</h3><span class="price">From $100</span>
+            <p>One focused page that tells people what you do, shows your best work and gets them to book, order or message you.</p>
+            <div class="tags"><span>Hero and offer</span><span>Gallery</span><span>Booking links</span><span>Mobile first</span></div></div>
+        </article>
+        <article class="service reveal">
+          <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
+          <div><h3>Full websites</h3><span class="price">From $250</span>
+            <p>A complete site with services, pricing, gallery, about and contact, shaped around your brand and the people you serve.</p>
+            <div class="tags"><span>Multi section</span><span>Pricing</span><span>FAQ</span><span>Contact</span></div></div>
+        </article>
+        <article class="service reveal">
+          <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5L12 15.6 7.1 18.2l.9-5.5-4-3.9 5.5-.8z"/></svg></span>
+          <div><h3>Logo design</h3><span class="price">Signature marks</span>
+            <p>Minimal wordmarks, monograms and logomarks that look as good on a business card as they do on a storefront sign.</p>
+            <div class="tags"><span>Wordmarks</span><span>Monograms</span><span>Signage mockups</span></div></div>
+        </article>
+        <article class="service reveal">
+          <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l4-1 11-11a2.1 2.1 0 0 0-3-3L5 16z"/><path d="M14 6l3 3"/></svg></span>
+          <div><h3>Brand identity</h3><span class="price">Full kits</span>
+            <p>A complete visual system with logo, colour palette, type and packaging mockups so your brand feels consistent everywhere.</p>
+            <div class="tags"><span>Logo kit</span><span>Palette</span><span>Packaging</span><span>Brand guide</span></div></div>
+        </article>
+        <article class="service reveal">
+          <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15.5-6.3L21 8M21 3v5h-5M21 12a9 9 0 0 1-15.5 6.3L3 16M3 21v-5h5"/></svg></span>
+          <div><h3>Redesigns</h3><span class="price">Refresh what you have</span>
+            <p>Already have a site that feels dated or does not convert? I rebuild it so it finally matches the quality of your work.</p>
+            <div class="tags"><span>Audit</span><span>New layout</span><span>Better copy</span><span>Faster load</span></div></div>
+        </article>
+        <article class="service reveal">
+          <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15c-1.5 1.5-2 5-2 5s3.5-.5 5-2M14 4c3-1 6 0 6 0s1 3 0 6l-7 7-6-6z"/><circle cx="15" cy="9" r="1.5"/></svg></span>
+          <div><h3>Launch and hosting</h3><span class="price">Ready to share</span>
+            <p>Your site goes live on fast, reliable hosting with your domain connected, so you can send the link to clients the same day.</p>
+            <div class="tags"><span>Netlify</span><span>Vercel</span><span>Domain setup</span><span>Handover</span></div></div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap reveal" aria-label="Highlights">
+  <div class="proof">
+    <div>
+      <blockquote>&ldquo;Every project starts with your voice and your client, and ends with a brand you are proud to share with the world.&rdquo;</blockquote>
+      <cite><img src="images/tomisin-portrait.webp" alt="" loading="lazy"><span><b>Tomisin</b>Founder, Tomhi Pro</span></cite>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>6</b><span>Live websites</span></div>
+      <div class="stat"><b>30+</b><span>Logos and brand kits</span></div>    </div>
+  </div>
+</section>
+
+<section class="section" id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="serif section-title reveal">How I work <svg class="sparkle" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg></h2>
+      <p class="section-lead reveal">Four calm stages take your project from a first message to something you are proud to send people to.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><span class="num">01</span><h3>Discover</h3><p>We talk through your business, your ideal client and what your current brand or page is missing.</p></div>
+      <div class="step reveal"><span class="num">02</span><h3>Design</h3><p>You receive a full design in your brand colours, shaped by your feedback until it feels right.</p></div>
+      <div class="step reveal"><span class="num">03</span><h3>Build</h3><p>Your site is built responsive and tested across phones, tablets and large screens.</p></div>
+      <div class="step reveal"><span class="num">04</span><h3>Launch</h3><p>Your site goes live with your domain connected and is handed over ready to share.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq" style="padding-top:0">
+  <div class="wrap faq-grid">
+    <div>
+      <h2 class="serif section-title reveal">Questions <svg class="sparkle" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg></h2>
+      <p class="section-lead reveal" style="margin-top:14px">Still unsure about something? Send me a message and I will happily walk you through it.</p>
+    </div>
+    <div class="faq-list">
+      <details><summary>How much does a website cost?</summary><p>Landing pages start from $100 and full websites start from $250. The final price depends on how many sections and pages you need.</p></details>
+      <details><summary>Do you design logos and brand kits too?</summary><p>Yes. I design minimal logos, logomarks and complete brand identity kits with colours, type and mockups, on their own or alongside a website.</p></details>
+      <details><summary>Who do you work with?</summary><p>Coaches, consultants and service providers such as braiders, wig stylists, barbers, bakers and groomers. If you serve clients, I can help.</p></details>
+      <details><summary>How long does it take?</summary><p>Most landing pages are ready in a few days. Full websites usually take one to two weeks, depending on feedback.</p></details>
+      <details><summary>Will it work on phones?</summary><p>Every site is built mobile first and tested on phones, tablets and desktops before launch.</p></details>
+      <details><summary>Where are you based?</summary><p>I work remotely with clients worldwide, from New Zealand to Canada and everywhere in between.</p></details>
+    </div>
+  </div>
+</section>
+
+<footer class="footer" id="contact">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h2 class="serif">Let's create something <span class="script">amazing!</span></h2>
+        <p style="margin-top:14px;color:rgba(253,243,236,.75);max-width:420px">Tell me about your business and what you need, and let's build something you are proud to share.</p>      </div>
+      <div>
+        <h3>Get in touch</h3>
+        <ul class="contact-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Available worldwide, working remotely</span></li>        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      <span>&copy; <span id="year">2026</span> Tomhi Pro. Designed and built by Tomisin.</span>
+      <a href="#top">Back to top</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const projects = [
+  { name:"Braids by Lee NZ", cat:"Hair braider", img:"images/braidsbylee.jpg", url:"https://braidsbylee-nz.netlify.app/",
+    desc:"A warm, editorial site for an Auckland travel braider, with a full style gallery, services and easy booking by text or DM.",
+    facts:[["Auckland","Location"],["Mobile","Service type"],["Gallery","Style showcase"],["Netlify","Hosted on"]] },
+  { name:"Wig by Jomo", cat:"Wig stylist", img:"images/wigbyjomo.jpg", url:"https://wigbyjomo.netlify.app/",
+    desc:"A soft, confident site for a Guelph wig stylist offering revamps, colour and installs, plus a send in your wig service across Canada.",
+    facts:[["Guelph","Location"],["Canada wide","Mail in service"],["5 cities","Areas served"],["Netlify","Hosted on"]] },
+  { name:"Kookies by Kenz", cat:"Home bakery", img:"images/kookiesbykenz.jpg", url:"https://kookiesbykenz.vercel.app",
+    desc:"A sweet, playful site for a home baker selling cookies, cupcakes, muffins and cake pops, with a clear menu and order flow.",
+    facts:[["From $2","Menu pricing"],["4 treats","Product lines"],["Orders","Main goal"],["Vercel","Hosted on"]] },
+  { name:"Diamond and Gold Paws", cat:"Mobile dog grooming", img:"images/goldpaws.jpg", url:"https://draft-two-sandy.vercel.app",
+    desc:"A calm, premium site for a mobile dog groomer, built around trust, one on one care and booking a groom at your door.",
+    facts:[["At your door","Service type"],["4 services","Grooming menu"],["Bookings","Main goal"],["Vercel","Hosted on"]] },
+  { name:"Crown Cutz", cat:"Barbershop demo", img:"images/crowncutz.jpg", url:"https://infooluwatomisin-sys.github.io/crown-cutz-demo/",
+    desc:"A sharp, modern demo site for a neighborhood barbershop, showing how a barbershop can turn visitors into booked cuts.",
+    facts:[["Demo","Project type"],["Walk ins","Booking style"],["Gallery","Cut showcase"],["Responsive","All screens"]] },
+  { name:"Social Design Portfolio", cat:"My Instagram work", img:"images/socialportfolio.jpg", url:"https://tomisin-portfolio-indol.vercel.app",
+    desc:"My social media design portfolio, showing calm, consistent Instagram feeds, carousels and brand systems for real brands.",
+    facts:[["9","Case studies"],["9","Brands"],["Carousels","Specialty"],["Vercel","Hosted on"]] }
+];
+
+const concepts = [
+  ["Rebecca Smith Jones","Business coach","A bold, editorial site for a business coach and consultant, built to convert visitors into growth strategy clients."],
+  ["Unleashed Coaching","Life coach","A soft, editorial site for a personal transformation coach, built around warm portraits and calm pacing."],
+  ["Rayna Milde","Life coach","An intentional, confident site for a certified life coach helping women reclaim their voice and worth."],
+  ["Mariska Yasmin","Life coach","A warm, results driven site for a life coach guiding clients through a clear, structured coaching program."],
+  ["Dr Adeola Milanka","Therapist","A calm, trustworthy site for a licensed clinical psychologist offering counseling and teletherapy."],
+  ["Audrey Blake","Social media coach","A sleek, modern site for a social media strategist helping business owners grow their online presence."],
+  ["Strategos","Business advisory","A sharp, executive presence for a growth advisory serving corporate leaders and founders."],
+  ["Doctor Avalon","Relationship therapist","A moody, editorial site for a clinical psychologist specializing in couples therapy and connection."],
+  ["Veronica Edwards","Mindset coach","A soft sage and cream site for a mother, mindset and life coach guiding women out of survival mode."],
+  ["Gaiding","Coaching and mentoring","A clean, credible site built to help a mentoring practice showcase its team and its process."]
+];
+
+const brand = {
+  kit:[ [0,"Fashion House","A deep green fashion identity carried across packaging, stationery and apparel."],
+        [1,"Elf Cosmo","A soft lavender skincare identity with product display and packaging mockups."],
+        [2,"Allure","A botanical serum label system in sage green and warm gold."],
+        [3,"Bloomistry","A blush pink beauty brand with a delicate floral mark and full product range."],
+        [4,"Instak","A warm neutral fashion label identity with tags, bags and pattern system."],
+        [6,"Elora Botanical Beauty","A rich plum beauty identity with a floral mark, packaging and campaign imagery."],
+        [7,"Roseva","A chocolate brown monogram identity for a leather goods label."],
+        [8,"Ousi","A burgundy fashion brand with garment tags, mailers and shopping bags."],
+        [9,"Felino","A sand and black streetwear identity with a lion mark and merch mockups."] ],
+  luxe:[ [2,"Coffee House","A warm circular emblem for a coffee shop."],
+         [3,"Flame Monogram","A sculpted gold S mark on a dark backdrop."],
+         [4,"Timeless Aura","A backlit script logo for a bridal boutique."],
+         [5,"Ziora Collection","A glowing circular badge for a home and lifestyle store."],
+         [6,"Royal Elixir","A crowned gold monogram for a luxury fragrance brand."],
+         [7,"Rama's","A bold R mark with a soft halo glow."],
+         [8,"Oris Beauty Salon","A rose and gold crest for a beauty salon."] ],
+  mini:[ [1,"Naari","A bold modern wordmark for a women led brand."],
+         [2,"Aisha","A refined initial mark with a delicate rose detail."],
+         [3,"ML Boutique","A rose gold script logo for a fashion boutique."],
+         [4,"Marele","A botanical perfumery wordmark with a leaf drop."],
+         [6,"Woocomerce Fashion","A butterfly script logo for a fashion store."],
+         [7,"Butterfly Events","A light, flowing script mark for an events brand."],
+         [8,"Artify Studio","A line art magnolia logo for a creative studio."],
+         [9,"Anna Belle","A signature style logo for an interior designer."] ],
+  mark:[ [1,"Photography Signature","A signature logo with a camera and mountain line drawing."],
+         [2,"Butterfly Profile","A butterfly that reveals a face in profile."],
+         [4,"Wing Mark","A bold outlined wing symbol."],
+         [5,"Swan Crest","An ornate swan crest in soft taupe."],
+         [6,"Line Art Face","A continuous line face mark for a beauty brand."],
+         [7,"Petal Mark","A simple three petal symbol."],
+         [8,"Embossed Floral","A floral mark pressed into textured paper."] ]
+};
+
+const groups = [
+  { id:"web", label:"Websites" },
+  { id:"concept", label:"Website concepts" },
+  { id:"kit", label:"Brand identity" },
+  { id:"luxe", label:"Logo signage" },
+  { id:"mini", label:"Minimal logos" },
+  { id:"mark", label:"Logomarks" }
+];
+
+const items = [
+  ...projects.map(p => ({ g:"web", title:p.name, tag:p.cat, img:p.img, pos:"top", desc:p.desc, facts:p.facts, url:p.url })),
+  ...concepts.map(([name, tag, desc], i) => ({ g:"concept", title:name, tag, img:`images/portfolio_${i+1}.jpg`, pos:"top", desc })),
+  ...Object.entries(brand).flatMap(([g, list]) => list.map(([n, title, desc]) => ({ g, title, tag:groups.find(x => x.id === g).label, img:`images/brand/${g}-${n}.jpg`, pos:"center", desc })))
+];
+
+// "All" interleaves the groups so the first screen shows a mix of everything
+const mixed = (() => {
+  const lists = groups.map(gr => items.filter(it => it.g === gr.id));
+  const out = [];
+  for (let i = 0; out.length < items.length; i++) lists.forEach(l => l[i] && out.push(l[i]));
+  return out;
+})();
+
+const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg>';
+const PAGE = 9;
+let current = "all", shown = PAGE;
+
+const filtersEl = document.getElementById('filters');
+filtersEl.innerHTML = [{ id:"all", label:"All" }, ...groups].map(f =>
+  `<button class="chip${f.id === 'all' ? ' active' : ''}" type="button" role="tab" aria-selected="${f.id === 'all'}" data-f="${f.id}">${f.label}<small>${f.id === 'all' ? items.length : items.filter(i => i.g === f.id).length}</small></button>`).join('');
+
+const grid = document.getElementById('workGrid'), foot = document.getElementById('worksFoot');
+function list() { return current === "all" ? mixed : items.filter(i => i.g === current); }
+function render() {
+  const all = list(), view = all.slice(0, shown);
+  grid.innerHTML = view.map(it => `
+    <button class="work" type="button" data-i="${items.indexOf(it)}">
+      <div class="work-media"><img src="${it.img}" alt="${it.title} ${it.tag.toLowerCase()} design" loading="lazy" style="object-position:${it.pos}"></div>
+      <div class="work-text"><div><h3>${it.title}</h3><span>${it.g === 'web' ? 'Live website' : it.tag}</span></div><span class="arrow-btn">${arrow}</span></div>
+    </button>`).join('');
+  foot.hidden = shown >= all.length;
+}
+render();
+
+filtersEl.addEventListener('click', e => {
+  const b = e.target.closest('.chip'); if (!b) return;
+  filtersEl.querySelectorAll('.chip').forEach(c => { c.classList.toggle('active', c === b); c.setAttribute('aria-selected', c === b); });
+  current = b.dataset.f; shown = PAGE; render();
+});
+document.getElementById('moreBtn').addEventListener('click', () => { shown += PAGE; render(); });
+
+const lb = document.getElementById('lightbox'), lbImg = document.getElementById('lbImg'), lbLink = document.getElementById('lbLink');
+let lastFocus = null;
+function openItem(it, trigger) {
+  lastFocus = trigger;
+  lbImg.src = it.img; lbImg.alt = it.title + ' full design';
+  document.getElementById('lbTitle').textContent = it.title;
+  document.getElementById('lbTag').textContent = it.tag;
+  document.getElementById('lbDesc').textContent = it.desc || '';
+  document.getElementById('lbFacts').innerHTML = (it.facts || []).map(f => `<div class="fact"><b>${f[0]}</b><span>${f[1]}</span></div>`).join('');
+  lbLink.hidden = !it.url; if (it.url) lbLink.href = it.url;
+  lb.classList.add('open'); lb.scrollTop = 0; document.body.style.overflow = 'hidden';
+  document.getElementById('lbClose').focus();
+}
+const closeLb = () => { lb.classList.remove('open'); document.body.style.overflow = ''; if (lastFocus) lastFocus.focus(); };
+grid.addEventListener('click', e => { const w = e.target.closest('.work'); if (w) openItem(items[w.dataset.i], w); });
+document.getElementById('lbClose').addEventListener('click', closeLb);
+lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && lb.classList.contains('open')) closeLb(); });
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const menuBtn = document.getElementById('menuBtn'), navLinks = document.getElementById('navLinks');
+menuBtn.addEventListener('click', () => menuBtn.setAttribute('aria-expanded', navLinks.classList.toggle('open')));
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { navLinks.classList.remove('open'); menuBtn.setAttribute('aria-expanded', false); }));
+
+const nav = document.getElementById('nav');
+addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 10), { passive:true });
+
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold:.12 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+const links = [...navLinks.querySelectorAll('a')];
+const spy = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
+}), { rootMargin:'-45% 0px -50% 0px' });
+['work','about','services','process','faq','contact'].forEach(id => spy.observe(document.getElementById(id)));
+</script>
+</body>
+</html>
